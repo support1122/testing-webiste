@@ -1,0 +1,503 @@
+/* === MODERN DEMO SECTION === */
+.demoSectionOuter {
+  padding: 0;
+  width: 92%;
+  max-width: 1200px;
+  margin: 4rem auto 8rem;
+  border-radius: 1.5rem;
+  font-family: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  position: relative;
+}
+
+.demoSection {
+  background: linear-gradient(135deg, #f55e1d 0%, #e54d1a 50%, #f55e1d 100%);
+  color: #fff;
+  border-radius: 1.5rem;
+  padding: 0;
+  /* box-shadow: 
+    0 25px 50px -12px rgba(245, 94, 29, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset; */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Decorative background elements */
+.demoSection::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.demoSection::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Content Container */
+.contentContainer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  padding: 4rem 5rem;
+  position: relative;
+  z-index: 1;
+  align-items: center;
+}
+
+/* Left Content */
+.leftContent {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.demoSubheading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.demoSubheading::before {
+  content: '';
+  width: 2rem;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.demoHeading {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.03rem;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.fireIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.demoText {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.25rem;
+  line-height: 1.7;
+  max-width: 500px;
+  margin: 0;
+}
+
+.demoText em {
+  font-style: italic;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+/* CTA Area */
+.ctaArea {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.demoButton {
+  background-color: #fff;
+  color: #111;
+  border: 0.15rem solid #111;
+  border-radius: 0.6rem;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0.3rem 0 #000;
+  width: fit-content;
+  position: relative;
+  overflow: hidden;
+}
+
+.demoButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(245, 94, 29, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.demoButton:hover {
+  transform: translateY(-0.15rem);
+  box-shadow: 0 0.5rem 0 #000;
+}
+
+.demoButton:hover::before {
+  left: 100%;
+}
+
+.demoButton:active {
+  transform: translateY(0);
+  box-shadow: 0 0.15rem 0 #000;
+}
+
+.demoNote {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.demoNote::before {
+  content: '⚡';
+  font-size: 1rem;
+}
+
+/* Right Side - Email Card */
+.rightContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.emailCard {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  width: 100%;
+  min-width: 280px;
+}
+
+.emailHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+.emailIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  opacity: 0.9;
+}
+
+.emailCopyWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.emailCopyWrapper:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.emailInput {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #111827;
+  font-size: 0.95rem;
+  padding: 0.4rem 0.8rem;
+  width: 235px;
+  cursor: default;
+  font-family: inherit;
+  font-weight: 500;
+  letter-spacing: 0.02rem;
+}
+
+.copyButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9fafb;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 0.5rem;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.copyButton:hover {
+  background-color: #f3f4f6;
+  border-color: #d1d5db;
+  transform: scale(1.08);
+}
+
+.copyButton:active {
+  transform: scale(0.95);
+}
+
+.copyIcon {
+  color: #111827;
+}
+
+.copiedTooltip {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background-color: #10b981;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeInOut 2s ease-in-out;
+  z-index: 10;
+}
+
+.copiedTooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  right: 14px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #10b981;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  10%, 90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Decorative dots pattern */
+.dotsPattern {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 80px;
+  height: 80px;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.3) 2px, transparent 2px);
+  background-size: 12px 12px;
+  opacity: 0.6;
+}
+
+/* === TABLET === */
+@media (max-width: 1024px) {
+  .demoSectionOuter {
+    width: 90%;
+    margin: 3rem auto 6rem;
+  }
+
+  .contentContainer {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 3rem;
+    text-align: center;
+  }
+
+  .leftContent {
+    text-align: center;
+    align-items: center;
+  }
+
+  .demoHeading {
+    font-size: 2.75rem;
+    justify-content: center;
+  }
+
+  .demoSubheading {
+    justify-content: center;
+  }
+
+  .demoSubheading::before {
+    display: none;
+  }
+
+  .rightContent {
+    align-items: center;
+    width: 100%;
+  }
+
+  .emailCard {
+    max-width: 400px;
+  }
+
+  .ctaArea {
+    align-items: center;
+  }
+}
+
+/* === MOBILE === */
+@media (max-width: 768px) {
+  .demoSectionOuter {
+    width: 95%;
+    margin: 2rem auto 4rem;
+    border-radius: 1rem;
+  }
+
+  .demoSection {
+    border-radius: 1rem;
+  }
+
+  .contentContainer {
+    padding: 2.5rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .demoHeading {
+    font-size: 2rem;
+    line-height: 1.2;
+    gap: 0.5rem;
+  }
+
+  .fireIcon img {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .demoSubheading {
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .demoText {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .demoButton {
+    font-size: 1rem;
+    padding: 0.9rem 1.75rem;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .emailCard {
+    min-width: unset;
+    width: 100%;
+    max-width: 100%;
+    padding: 1.25rem;
+  }
+
+  .emailInput {
+    width: calc(100% - 50px);
+    font-size: 0.9rem;
+  }
+
+  .dotsPattern {
+    display: none;
+  }
+}
+
+/* === SMALL PHONES === */
+@media (max-width: 480px) {
+  .demoSectionOuter {
+    width: 100%;
+    margin: 1.5rem auto 3rem;
+    border-radius: 0;
+  }
+
+  .demoSection {
+    border-radius: 0;
+  }
+
+  .contentContainer {
+    padding: 2rem 1.25rem;
+  }
+
+  .demoHeading {
+    font-size: 1.75rem;
+  }
+
+  .demoText {
+    font-size: 1rem;
+  }
+
+  .demoButton {
+    font-size: 0.95rem;
+    padding: 0.85rem 1.5rem;
+  }
+
+  .demoNote {
+    font-size: 0.8rem;
+  }
+
+  .emailCard {
+    padding: 1rem;
+  }
+
+  .emailHeader {
+    font-size: 0.8rem;
+  }
+
+  .emailInput {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .copyButton {
+    width: 32px;
+    height: 32px;
+  }
+
+  .copiedTooltip {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.75rem;
+    top: -45px;
+  }
+}

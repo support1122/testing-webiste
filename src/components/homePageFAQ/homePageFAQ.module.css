@@ -1,0 +1,243 @@
+.faqSection {
+  background-color: #faf7f2 !important;
+  padding: 5rem 1.5rem 6rem;
+  font-family: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  scroll-margin-top: 100px;
+  width: 100%;
+}
+
+/* === HEADER === */
+.header {
+  text-align: center;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto 3rem;
+}
+
+.header h2 {
+  font-size: clamp(2.25rem, 4vw, 3.1rem);
+  line-height: 1.05;
+  font-weight: 800;
+  color: #02050a;
+  margin-bottom: 1.6rem;
+  letter-spacing: 0;
+}
+
+.header h2 span {
+  color: inherit !important;
+}
+
+.header p {
+  width: min(100%, 560px);
+  margin: 0 auto;
+  color: #05070b;
+  font-size: clamp(1rem, 1.25vw, 1.2rem);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+/* === FAQ CONTAINER === */
+.faqContainer {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border: 1px solid #ebdfd7;
+  border-radius: 0;
+  overflow: visible;
+  background-color: #fff;
+  box-shadow: none;
+}
+
+.faqItem {
+  position: relative;
+  border-bottom: 1px solid #eee7e1;
+  background-color: #fff;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.faqItem:last-child {
+  border-bottom: none;
+}
+
+.faqQuestion {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: #05070b;
+  text-align: left;
+  padding: 1.35rem 2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  line-height: 1.25;
+  transition: background-color 0.2s ease;
+}
+
+.faqQuestion:hover {
+  background-color: #fffaf7;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  font-size: 0.95rem;
+  color: #ff4c00;
+}
+
+.faqAnswer {
+  padding: 0 4.5rem 1.3rem 2rem;
+  color: #6f6965;
+  font-size: 1.03rem;
+  line-height: 1.35;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-0.3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === ACTIVE STATE === */
+.active {
+  background-color: #fff;
+}
+
+.active .faqQuestion {
+  color: #05070b;
+  padding-bottom: 0.8rem;
+}
+
+.active .icon {
+  color: #05070b;
+}
+
+.active::before,
+.active::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+}
+
+.active::before {
+  top: -1px;
+  left: -1px;
+  border-top: 1.5px solid #ff4c00;
+  border-left: 1.5px solid #ff4c00;
+}
+
+.active::after {
+  top: -1px;
+  right: -1px;
+  border-top: 1.5px solid #ff4c00;
+  border-right: 1.5px solid #ff4c00;
+}
+
+.active .faqAnswer::before,
+.active .faqAnswer::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+}
+
+.active .faqAnswer::before {
+  left: -1px;
+  border-bottom: 1.5px solid #ff4c00;
+  border-left: 1.5px solid #ff4c00;
+}
+
+.active .faqAnswer::after {
+  right: -1px;
+  border-bottom: 1.5px solid #ff4c00;
+  border-right: 1.5px solid #ff4c00;
+}
+
+/* === TABLET === */
+@media (max-width: 1024px) {
+  .header {
+    width: 100%;
+  }
+
+  .header p {
+    width: min(100%, 560px);
+  }
+
+  .faqContainer {
+    width: 92%;
+  }
+}
+
+/* === MOBILE === */
+@media (max-width: 768px) {
+  .faqSection {
+    padding: 4rem 1rem 5rem;
+  }
+
+  .header {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .header h2 {
+    font-size: 1.9rem;
+    line-height: 1.08;
+  }
+
+  .header p {
+    width: 95%;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .faqContainer {
+    width: 100%;
+  }
+
+  .faqQuestion {
+    font-size: 1rem;
+    padding: 1.15rem 1.2rem;
+  }
+
+  .faqAnswer {
+    padding: 0 2.5rem 1.15rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* === SMALL PHONES === */
+@media (max-width: 480px) {
+  .header h2 {
+    font-size: 1.5rem;
+  }
+
+  .header p {
+    font-size: 0.9rem;
+  }
+
+  .faqQuestion {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+
+  .faqAnswer {
+    font-size: 0.85rem;
+    padding: 0 2rem 1rem 1rem;
+  }
+}

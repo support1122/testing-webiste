@@ -1,0 +1,242 @@
+.section {
+  background: #fff;
+  color: #111;
+  padding: 86px 20px 96px;
+}
+
+.inner {
+  margin: 0 auto;
+  max-width: 1120px;
+}
+
+.header {
+  margin: 0 auto 86px;
+  max-width: 760px;
+  text-align: center;
+}
+
+.header h2 {
+  color: #ff4c00;
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.08;
+  margin: 0 0 12px;
+}
+
+.header p {
+  color: #171717;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.45;
+  margin: 0 auto;
+  max-width: 640px;
+}
+
+.controls {
+  display: grid;
+  gap: 34px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 58px;
+}
+
+.controls label {
+  display: block;
+}
+
+.controls span {
+  color: #111;
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  margin-bottom: 7px;
+}
+
+.controls input {
+  background: transparent;
+  border: 1px solid #292929;
+  border-radius: 8px;
+  box-shadow: none;
+  color: #111;
+  font-size: 14px;
+  font-weight: 700;
+  height: 48px;
+  outline: none;
+  padding: 0 14px;
+  width: 100%;
+}
+
+.controls input:focus {
+  border-color: #ff4c00;
+  box-shadow: 0 0 0 3px rgba(255, 76, 0, 0.16);
+}
+
+.controls input::placeholder {
+  color: rgba(17, 17, 17, 0.45);
+  opacity: 1;
+}
+
+.controls input:focus::placeholder {
+  color: transparent;
+}
+
+.chart {
+  align-items: end;
+  border-bottom: 1px solid #111;
+  display: grid;
+  gap: clamp(28px, 5.5vw, 92px);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  min-height: 620px;
+  padding: 0 54px 0;
+}
+
+.group {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.bars {
+  align-items: end;
+  display: flex;
+  gap: 4px;
+  height: 560px;
+  justify-content: center;
+  width: 100%;
+}
+
+.barWrap {
+  align-items: center;
+  display: flex;
+  flex: 0 0 72px;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.beforeName,
+.flashfireName {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.beforeName {
+  color: #111;
+}
+
+.flashfireName {
+  color: #ff4c00;
+}
+
+.beforeBar,
+.flashfireBar {
+  align-items: flex-start;
+  border-radius: 8px 8px 0 0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  min-height: 28px;
+  position: relative;
+  transition: height 0.3s ease;
+  width: 72px;
+}
+
+.beforeBar {
+  background: #000;
+}
+
+.flashfireBar {
+  background: #ff551b;
+}
+
+.beforeBar strong,
+.flashfireBar strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 900;
+  left: 50%;
+  position: absolute;
+  top: 24px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.shortBar strong {
+  bottom: 7px;
+  top: auto;
+}
+
+.group p {
+  color: #111;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 26px 0 -42px;
+  min-height: 32px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .header {
+    margin-bottom: 46px;
+  }
+
+  .controls {
+    gap: 18px;
+    grid-template-columns: 1fr;
+    margin-bottom: 44px;
+  }
+
+  .chart {
+    gap: 22px;
+    min-height: 520px;
+    overflow-x: auto;
+    padding: 0 10px 0;
+  }
+
+  .group {
+    min-width: 138px;
+  }
+
+  .bars {
+    height: 460px;
+  }
+
+  .barWrap {
+    flex-basis: 56px;
+  }
+
+  .beforeBar,
+  .flashfireBar {
+    width: 56px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 64px 14px 74px;
+  }
+
+  .header {
+    text-align: left;
+  }
+
+  .header h2 {
+    font-size: 34px;
+  }
+
+  .header p {
+    font-size: 14px;
+  }
+
+  .chart {
+    margin: 0 -4px;
+  }
+}
