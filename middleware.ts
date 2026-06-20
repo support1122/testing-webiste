@@ -29,9 +29,7 @@ export async function middleware(request: NextRequest) {
   // Only check geo on root path
   if (pathname === '/') {
     // Use Vercel's built-in geo header (no fetch needed)
-    const country = request.headers.get('x-vercel-ip-country') ||
-                    request.geo?.country ||
-                    '';
+    const country = request.headers.get('x-vercel-ip-country') || '';
 
     if (country === 'CA') {
       const url = request.nextUrl.clone();
